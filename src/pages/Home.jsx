@@ -10,7 +10,7 @@ const Home = () => {
 		userInfo: {},
 		userAddr: {},
 	})
-	const [step, setStep] = useState(1);
+	const [step, setStep] = useState(3);
 	const [activeTab, setActiveTab] = useState(0);
 	const LoginSchema = Yup.object().shape({
 		email: Yup.string()
@@ -50,7 +50,7 @@ const Home = () => {
 				{step === 1 && (
 					<Tabs activeTab={activeTab} setActiveTab={setActiveTab} imgSrc={Remove}
 						config={[
-							{ header: 'Register', component: <Signup setStep={setStep} /> },
+							{ header: 'Register', component: <Signup SignupSchema={SignupSchema} setStep={setStep} /> },
 							{ header: 'Login', component: <Login LoginSchema={LoginSchema} /> },
 						]}
 					/>
@@ -58,7 +58,7 @@ const Home = () => {
 				{step === 2 && (
 					<>
 						<FormHeader setStep={setStep} header="Personal information" step={step} />
-						<UserInfo setStep={setStep} />
+						<UserInfo setStep={setStep} UserInfoSchema={UserInfoSchema} />
 					</>
 				)}
 				{step === 3 && (
