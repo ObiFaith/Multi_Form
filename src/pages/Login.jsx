@@ -2,10 +2,12 @@ import { Field, Form, Formik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import { Authenticate, Button, InputWithLabel } from '..';
 
-const Login = ({LoginSchema, setFormData}) => {
+const Login = ({LoginSchema}) => {
 	const navigate = useNavigate();
+	/* Handle Error for Login */
 
 	return (
+		<>
 		<div>
 			<Authenticate />
 			<div>
@@ -13,9 +15,8 @@ const Login = ({LoginSchema, setFormData}) => {
 				<Formik
 					initialValues={{ email: '', password: '', newsLetter: false,}}
 					validationSchema={LoginSchema}
-					onSubmit={(values, { setSubmitting }) => {
+					onSubmit={async (values, { setSubmitting }) => {
 						setSubmitting(false);
-						setFormData(values);
 						navigate('/dashboard');
 					}}
 				>
@@ -33,6 +34,7 @@ const Login = ({LoginSchema, setFormData}) => {
 				</Formik>
 			</div>
 		</div>
+		</>
 	);
 };
 

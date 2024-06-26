@@ -1,8 +1,11 @@
 import { Field, Form, Formik } from 'formik';
 import { Authenticate, Button, InputWithLabel } from '..';
+import { useAuth } from '../contexts/auth';
 
 const Signup = ({ setStep, SignupSchema }) => {
-	return (
+	const {signup, isLoading} = useAuth()
+
+	return (<>
 		<div>
 			<Authenticate />
 			<div>
@@ -11,15 +14,16 @@ const Signup = ({ setStep, SignupSchema }) => {
 					initialValues={{ email: '', password: '', newsLetter: false }}
 					validationSchema={SignupSchema}
 					onSubmit={(values, { setSubmitting }) => {
+						signup(values.email, values.password)
 						setSubmitting(false);
-						setStep(prevStep => prevStep + 1);
+						if (isLoading) setStep(prevStep => prevStep + 1);
 					}}
 				>
-					{() => (
+					{({isSubmitting}) => (
 						<Form>
 							<InputWithLabel label="Email address" type="email" name="email" />
 							<InputWithLabel label="Password" type="password" name="password" />
-							<Button name="Create account" />
+							<Button name={isSubmitting ? 'Create account...' : 'Create account'} />
 							<div className="pt-4">
 								<Field name="newsLetter" type="checkbox" />
 								<label htmlFor="newsLetter" className="pl-3">Send me news and promotions</label>
@@ -32,7 +36,7 @@ const Signup = ({ setStep, SignupSchema }) => {
 				</p>
 			</div>
 		</div>
-	);
+	</>);
 };
 
 export default Signup;

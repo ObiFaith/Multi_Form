@@ -4,25 +4,10 @@ import { useState } from 'react';
 import * as Yup from 'yup'
 
 const Home = () => {
-	const [formData, setFormData] = useState({
-		login: {},
-		signup: {},
-		userInfo: {},
-		userAddr: {},
-	})
-	const [step, setStep] = useState(3);
+	const [step, setStep] = useState(1);
 	const [activeTab, setActiveTab] = useState(0);
-	const LoginSchema = Yup.object().shape({
-		email: Yup.string()
-			.email('Invalid email')
-			.required('Email address is required'),
-		password: Yup.string()
-			.min(8, '8+ characters')
-			.required('Password is required'),
-		newsLetter: Yup.boolean(),
-	})
 
-	const SignupSchema = Yup.object().shape({
+	const SignupOrLoginSchema = Yup.object().shape({
 		newsLetter: Yup.boolean(),
 		password: Yup.string().min(8, '8+ characters').required('Password is required'),
 		email: Yup.string().email('Invalid email').required('Email address is required'),
@@ -50,8 +35,8 @@ const Home = () => {
 				{step === 1 && (
 					<Tabs activeTab={activeTab} setActiveTab={setActiveTab} imgSrc={Remove}
 						config={[
-							{ header: 'Register', component: <Signup SignupSchema={SignupSchema} setStep={setStep} /> },
-							{ header: 'Login', component: <Login LoginSchema={LoginSchema} /> },
+							{ header: 'Register', component: <Signup SignupSchema={SignupOrLoginSchema} setStep={setStep} /> },
+							{ header: 'Login', component: <Login LoginSchema={SignupOrLoginSchema} /> },
 						]}
 					/>
 				)}
