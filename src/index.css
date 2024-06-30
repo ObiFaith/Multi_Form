@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 body {
-	background-color: #fbfbfb;
 	font-size: 16px;
 	font-family: 'Commissioner', sans-serif;
 	font-optical-sizing: auto;

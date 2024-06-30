@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Form, Formik } from 'formik';
 import { BtnSm, Button, InputWithLabel } from '..';
-import { Dollar, Pin, Search, Time, Users } from '../assets';
+import { Dollar, Pin, search, Time, Users } from '../assets';
 
 const Address = ({ setStep, UserAddrSchema }) => {
 	const [addManual, setAddManual] = useState(false);
@@ -14,7 +14,7 @@ const Address = ({ setStep, UserAddrSchema }) => {
 						{() => (
 							<Form>
 								<div className="relative">
-									<img className="absolute top-5 left-4 z-10" src={Search} alt="Search Icon" />
+									<img className="absolute top-5 left-4 z-10" src={search} alt="Search Icon" />
 									<InputWithLabel className="pl-8" placeholder="Search for address" type="text" name="searchAddr" />
 								</div>
 								<p className="text-[13px] text-black/65 pt-1">Your address is not visible to other users</p>

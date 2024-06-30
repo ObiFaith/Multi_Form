@@ -3,7 +3,8 @@ import { Authenticate, Button, InputWithLabel } from '..';
 import { useAuth } from '../contexts/auth';
 
 const Signup = ({ setStep, SignupSchema }) => {
-	const {signup, isLoading} = useAuth()
+	const {signup, user} = useAuth()
+//	console.log(user)
 
 	return (<>
 		<div>
@@ -16,7 +17,7 @@ const Signup = ({ setStep, SignupSchema }) => {
 					onSubmit={(values, { setSubmitting }) => {
 						signup(values.email, values.password)
 						setSubmitting(false);
-						if (isLoading) setStep(prevStep => prevStep + 1);
+						if (user) setStep(prevStep => prevStep + 1);
 					}}
 				>
 					{({isSubmitting}) => (

@@ -30,7 +30,7 @@ const Home = () => {
 	})
 
 	return (
-		<div className="px-5">
+		<div className="px-5 bg-[#FBFBFB] min-h-screen grid grid-cols-1 justify-center items-center">
 			<div className={`container rounded-3xl shadow-lg max-w-[500px] w-full bg-white ${step !== 4 ? 'pt-4 pb-6 px-6 lg:px-11' : ''}`}>
 				{step === 1 && (
 					<Tabs activeTab={activeTab} setActiveTab={setActiveTab} imgSrc={Remove}

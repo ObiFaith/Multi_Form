@@ -14,7 +14,8 @@ export default {
       gray: "#DDDDDD",
       black: "#1A0710",
       pink: '#EF498F',
-      blue: '#1B1F3B'
+      blue: '#1B1F3B',
+      green: '#00AC4F',
     },
     extend: {
       colors: {
