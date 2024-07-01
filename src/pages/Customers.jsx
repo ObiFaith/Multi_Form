@@ -1,6 +1,6 @@
 import { arrow_down, arrow_up, avatarImgs, monitor, profile_tick, profile_user } from '../assets'
 import { Search } from '..'
-import {customersData} from '../constant'
+import {customersData} from '../constants/data'
 
 const Customers = () => {
   const tableHeading = {
