@@ -9,6 +9,7 @@ import Google from './icons/Google.svg';
 import Dollar from './icons/Dollar.svg';
 import Remove from './icons/Remove.svg';
 import wallet from './icons/wallet.svg';
+import avatar from './icons/avatar.svg';
 import monitor from './icons/monitor.svg';
 import setting from './icons/setting.svg';
 import Saly_10 from './icons/Saly_10.svg';
@@ -28,15 +29,15 @@ import avatar_5 from './images/avatar_5.png';
 import arrow_down from './icons/arrow_down.svg';
 import key_square from './icons/key_square.svg';
 import ArrowRight from './icons/ArrowRight.svg';
+import searchIcon from './icons/searchIcon.svg';
 import profile_user from './icons/profile_user.svg';
 import profile_tick from './icons/profile_tick.svg';
 import chevron_down from './icons/chevron_down.svg';
 import chevron_right from './icons/chevron-right.svg';
-import searchIcon from './icons/searchIcon.svg'
 
 export { Eye, Pin, Info, Time, Users, Apple, Google, Dollar, Remove, Saly_10, Success,
   Dropdown, Facebook, Calendar, ArrowRight, setting, chevron_down, chevron_right, arrow_up,
-  arrow_down, profile_user, profile_tick, monitor, searchIcon
+  arrow_down, profile_user, profile_tick, monitor, searchIcon, avatar
 }
 
 export const sidebarImgs = [

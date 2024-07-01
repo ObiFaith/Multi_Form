@@ -14,8 +14,9 @@ const Signup = ({ setStep, SignupSchema }) => {
 				<Formik
 					initialValues={{ email: '', password: '', newsLetter: false }}
 					validationSchema={SignupSchema}
-					onSubmit={(values, { setSubmitting }) => {
-						signup(values.email, values.password)
+					onSubmit={async (values, { setSubmitting }) => {
+						const res =  await signup(values.email, values.password)
+						console.log(res.json())
 						setSubmitting(false);
 						if (user) setStep(prevStep => prevStep + 1);
 					}}

@@ -27,7 +27,7 @@ body {
 		@apply text-white rounded-xl font-bold text-base py-4 mt-6 bg-primary w-full hover:bg-primary/85 focus:bg-primary;
 	}
 	.input {
-		@apply placeholder:text-black/65 indent-4 text-black/85 text-base border-style pb-2;
+		@apply placeholder:text-black/65 indent-4 text-black/85 text-base border-style pb-1;
 	}
 }
 

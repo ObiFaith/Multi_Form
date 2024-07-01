@@ -3,24 +3,6 @@ import { Search } from '..'
 import {customersData} from '../constants/data'
 
 const Customers = () => {
-  const tableHeading = {
-		name: 'Customer Name',
-		company: 'Company',
-		phone: 'Phone Number',
-		email: 'Email',
-		country: 'Country',
-		status: 'Status',
-	};
-
-  /*
-    {tableHeading.map((heading, index) => (
-      <div key={index} className="">
-        <h3>{heading}</h3>
-        {Object.values(customersData[index]).map(value => <p key={value}>{value}</p>)}
-      </div>
-    ))}
-  */
-
   return (
     <div className='*:bg-white *:shadow-md *:rounded-lg *:lg:rounded-3xl'>
       <div className="px-4 lg:px-6 py-8 flex max-lg:flex-col gap-7 xl:gap-14 lg:justify-around">
@@ -79,7 +61,7 @@ const Customers = () => {
         <div className='py-8'>
         <table className='w-full'>
             <thead className='border-b border-[#EEEEEE]'>
-              <tr className='*:text-[#B5B7C0] *:font-medium text-sm flex *:w-full gap-5 lg:gap-8 justify-between'>
+              <tr className='*:text-[#B5B7C0] *:font-medium py-5 text-sm flex *:w-full gap-5 lg:gap-8 justify-between'>
                 <td>Customer Name</td>
                 <td>Company</td>
                 <td>Phone Number</td>
@@ -90,14 +72,14 @@ const Customers = () => {
             </thead>
             <tbody>
               {customersData.map(customer => (
-                <tr key={customer.email} className='*:text-sm *:font-medium flex *:w-full gap-5 lg:gap-8 justify-between border-b border-[#EEEEEE]'>
+                <tr key={customer.email} className='*:text-sm *:font-medium py-5 flex *:w-full gap-5 lg:gap-8 justify-between border-b border-[#EEEEEE]'>
                   {Object.values(customer).map(item =>
 										typeof item === 'string' ?
 											<td key={item}>{item}</td>
 										: <td key={item}
                         className={`rounded-md inline-block text-center py-1 border
-                          ${item ? 'text-[#00B087] px-[17px] border-[#00B087] bg-[#16C098]/40'
-                                 : 'text-[#DF0404] px-3 bg-[#FFC5C5] border-[#DF0404]'}`}
+                          ${item ? 'text-[#00B087] border-[#00B087] bg-[#16C098]/40'
+                                 : 'text-[#DF0404] bg-[#FFC5C5] border-[#DF0404]'}`}
                       >{item ? 'Active' : 'Inactive'}</td>
 									)}
                 </tr>
@@ -105,7 +87,19 @@ const Customers = () => {
             </tbody>
           </table>
         </div>
-        <div className=""></div>
+        <div className="flex gap-5 max-md:flex-col justify-between">
+          <p className='text-[#B5B7C0] text-sm'>Showing data 1 to 8 of 256K entries</p>
+          <div className="flex gap-4 *:px-2 *:text-sm *:font-medium *:py-1 *:rounded-md">
+            <div className="bg-[#F5F5F5] border border-[#EEEEEE]">&lt;</div>
+            <div className="bg-primary border border-primary text-white">1</div>
+            <div className="bg-[#F5F5F5] border border-[#EEEEEE]">2</div>
+            <div className="bg-[#F5F5F5] border border-[#EEEEEE]">3</div>
+            <div className="bg-[#F5F5F5] border border-[#EEEEEE]">4</div>
+            <div>...</div>
+            <div className="bg-[#F5F5F5] border border-[#EEEEEE]">40</div>
+            <div className="bg-[#F5F5F5] border border-[#EEEEEE]">&gt;</div>
+          </div>
+        </div>
       </div>
     </div>
   )
