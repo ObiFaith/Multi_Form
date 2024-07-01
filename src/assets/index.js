@@ -32,7 +32,7 @@ import profile_user from './icons/profile_user.svg';
 import profile_tick from './icons/profile_tick.svg';
 import chevron_down from './icons/chevron_down.svg';
 import chevron_right from './icons/chevron-right.svg';
-import searchIcon from './icons/search.svg'
+import searchIcon from './icons/searchIcon.svg'
 
 export { Eye, Pin, Info, Time, Users, Apple, Google, Dollar, Remove, Saly_10, Success,
   Dropdown, Facebook, Calendar, ArrowRight, setting, chevron_down, chevron_right, arrow_up,
