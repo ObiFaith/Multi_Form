@@ -1,9 +1,9 @@
-import { search } from '../assets';
+import { searchIcon } from '../assets';
 
 const Search = ({ textSize, bg_clr = 'bg-white' }) => {
 	return (
 		<div className={`flex relative px-2 rounded-xl ${bg_clr}`}>
-			<img className={`absolute top-2`} src={search} alt="Search" />
+			<img className={`absolute top-2`} src={searchIcon} alt="Search" />
 			<input
 				className={`indent-2 w-full text-sm pl-5 outline-none ${bg_clr} ${
 					textSize

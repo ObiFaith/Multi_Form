@@ -8,7 +8,7 @@ import Apple from './icons/Apple.svg';
 import Google from './icons/Google.svg';
 import Dollar from './icons/Dollar.svg';
 import Remove from './icons/Remove.svg';
-import search from './icons/search.svg';
+import searchIcon from './icons/search.svg';
 import wallet from './icons/wallet.svg';
 import monitor from './icons/monitor.svg';
 import setting from './icons/setting.svg';
@@ -34,7 +34,7 @@ import profile_tick from './icons/profile_tick.svg';
 import chevron_down from './icons/chevron_down.svg';
 import chevron_right from './icons/chevron-right.svg';
 
-export { Eye, Pin, Info, Time, Users, Apple, Google, Dollar, Remove, search, Saly_10, Success,
+export { Eye, Pin, Info, Time, Users, Apple, Google, Dollar, Remove, searchIcon, Saly_10, Success,
   Dropdown, Facebook, Calendar, ArrowRight, setting, chevron_down, chevron_right, arrow_up,
   arrow_down, profile_user, profile_tick, monitor
 }
