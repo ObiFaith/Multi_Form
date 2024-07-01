@@ -1,5 +1,5 @@
 import { Apple, Facebook, Google } from '../assets';
-import { doSignInWithGoogle } from '../test/auth';
+//import { doSignInWithGoogle } from '../test/auth';
 
 const Authenticate = () => {
 	return (
@@ -7,7 +7,7 @@ const Authenticate = () => {
 			<img src={Apple} alt="Apple Icon" />
 			<img src={Facebook} alt="Facebook Icon" />
 			<img
-				onClick={() => doSignInWithGoogle()}
+				/* onClick={() => doSignInWithGoogle()} */
 				src={Google}
 				alt="Google Icon"
 			/>
