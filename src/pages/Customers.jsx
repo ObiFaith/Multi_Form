@@ -3,6 +3,8 @@ import { Search } from '..'
 import {customersData} from '../constants/data'
 
 const Customers = () => {
+  const dataCells = ['Customer Name', 'Company', 'Phone Number', 'Email', 'Country']
+
   return (
     <div className='*:bg-white *:shadow-md *:rounded-lg *:lg:rounded-3xl'>
       <div className="px-4 lg:px-6 py-8 flex max-lg:flex-col gap-7 xl:gap-14 lg:justify-around">
@@ -59,28 +61,30 @@ const Customers = () => {
           </div>
         </div>
         <div className='py-8'>
-        <table className='w-full'>
-            <thead className='border-b border-[#EEEEEE]'>
-              <tr className='*:text-[#B5B7C0] *:font-medium py-5 text-sm flex *:w-full gap-5 lg:gap-8 justify-between'>
-                <td>Customer Name</td>
-                <td>Company</td>
-                <td>Phone Number</td>
-                <td>Email</td>
-                <td>Country</td>
-                <td>Status</td>
+        <table className='w-full border-collapse'>
+            <thead className='border-b border-[#EEEEEE] max-lg:hidden'>
+              <tr className="*:text-[#B5B7C0] *:font-medium py-5 text-sm flex *:w-full gap-5 lg:gap-8 justify-between">
+                <td data-cell="Customer Name">Customer Name</td>
+                <td data-cell="Company">Company</td>
+                <td data-cell="Phone Number">Phone Number</td>
+                <td data-cell="Email">Email</td>
+                <td data-cell="Country">Country</td>
+                <td data-cell="Status">Status</td>
               </tr>
             </thead>
             <tbody>
               {customersData.map(customer => (
-                <tr key={customer.email} className='*:text-sm *:font-medium py-5 flex *:w-full gap-5 lg:gap-8 justify-between border-b border-[#EEEEEE]'>
-                  {Object.values(customer).map(item =>
+                <tr key={customer.email} className='*:text-sm lg:*:w-full *:font-medium flex max-lg:flex-col gap-4 lg:gap-8 py-5 lg:justify-between border-b border-[#EEEEEE]'>
+                  {Object.values(customer).map((item, index) =>
 										typeof item === 'string' ?
-											<td key={item}>{item}</td>
-										: <td key={item}
-                        className={`rounded-md inline-block text-center py-1 border
+											<td data-cell={dataCells[index]} className='max-lg:block max-lg:before:font-bold max-lg:before:content-[attr(data-cell)_":_"]' key={item}>{item}</td>
+										: <span key={index} className='max-lg:flex gap-2 items-center'>
+                      <td className='lg:hidden font-bold'>Status: </td>
+                      <td
+                        className={`rounded-md lg:flex justify-center items-center px-4 text-center py-1 lg:border
                           ${item ? 'text-[#00B087] border-[#00B087] bg-[#16C098]/40'
                                  : 'text-[#DF0404] bg-[#FFC5C5] border-[#DF0404]'}`}
-                      >{item ? 'Active' : 'Inactive'}</td>
+                      >{item ? 'Active' : 'Inactive'}</td></span>
 									)}
                 </tr>
               ))}

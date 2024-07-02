@@ -18,13 +18,13 @@ body {
 
 @layer components {
 	.btn-sm {
-		@apply border border-pink/30 rounded-xl px-3 py-[6px] items-center text-primary text-sm flex gap-2 font-bold;
+		@apply border outline-none border-pink/30 rounded-xl px-3 py-[6px] items-center text-primary text-sm flex gap-2 font-bold;
 	}
 	.border-style {
 		@apply border w-full invalid:border-error border-gray outline-none rounded-xl py-3;
 	}
 	.btn-primary {
-		@apply text-white rounded-xl font-bold text-base py-4 mt-6 bg-primary w-full hover:bg-primary/85 focus:bg-primary;
+		@apply text-white outline-none rounded-xl font-bold text-base py-4 mt-6 bg-primary w-full hover:bg-primary/85 focus:bg-primary;
 	}
 	.input {
 		@apply placeholder:text-black/65 indent-4 text-black/85 text-base border-style pb-1;
