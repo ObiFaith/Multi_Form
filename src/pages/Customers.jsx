@@ -93,7 +93,7 @@ const Customers = () => {
         </div>
         <div className="flex gap-5 max-md:flex-col justify-between">
           <p className='text-[#B5B7C0] text-sm'>Showing data 1 to 8 of 256K entries</p>
-          <div className="flex gap-4 *:px-2 *:text-sm *:font-medium *:py-1 *:rounded-md">
+          <div className="flex flex-wrap gap-4 *:px-2 *:text-sm *:font-medium *:py-1 *:rounded-md">
             <div className="bg-[#F5F5F5] border border-[#EEEEEE]">&lt;</div>
             <div className="bg-primary border border-primary text-white">1</div>
             <div className="bg-[#F5F5F5] border border-[#EEEEEE]">2</div>

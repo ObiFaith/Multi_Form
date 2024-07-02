@@ -11,10 +11,10 @@ const DashboardLayout = () => {
       <Sidebar isOpen={isOpen} setOpen={setOpen} />
       <div className="px-8 max-lg:container w-4/5 mx-auto">
         <div className="py-10 flex max-md:flex-col gap-4 justify-between md:items-center">
-          {!isOpen ? <div className="flex gap-6 items-center justify-between">
+          <div className="flex gap-6 items-center justify-between">
             <div className="min-[520px]:hidden cursor-pointer"><img onClick={() => setOpen(isOpen => !isOpen)} src={setting} alt="setting icon" /></div>
-            <h1 className='lg:text-2xl text-lg font-semibold'>Hello Evano 👋🏼,</h1>
-          </div> : <h1 className='lg:text-2xl text-lg font-semibold'>Hello Evano 👋🏼,</h1>}
+            <h1 className='lg:text-2xl text-lg font-semibold'>Hello Evano 👋🏼</h1>
+          </div>
           <Search />
         </div>
         <Outlet />
