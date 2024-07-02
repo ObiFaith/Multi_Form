@@ -1,13 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { setting, chevron_down, sidebarImgs, chevron_right, avatar } from '../assets';
-import { useState } from 'react';
 
-const Sidebar = () => {
-	const [isOpen, setOpen] = useState(false);
-
+const Sidebar = ({isOpen, setOpen}) => {
 	return (
 		<div className={`bg-white grid content-between pt-9 pb-20 shadow-lg gap-8 transition-all
-			${isOpen ? 'px-5 bg-white/95 lg:px-8 max-lg:absolute top-0 left-0 z-10' : 'max-md:min-w-16 md:px-6'}
+			${isOpen ? 'px-5 bg-white/95 lg:px-8 max-lg:absolute top-0 left-0 z-10' : 'max-md:min-w-20 md:px-6 max-[520px]:hidden'}
 		`}>
 			<div className='grid gap-y-8 lg:gap-y-12'>
 				<div className='flex items-center gap-2 justify-center'>
