@@ -12,10 +12,10 @@ import './index.css';
 import { Customers, Home } from '.';
 import { AuthProvider, useAuth } from './contexts/auth';
 
-const PrivateRoute = ({component: Component}) => <Component />/* {
+const PrivateRoute = ({component: Component}) => {
 	const {user} = useAuth()
 	return user ? <Component /> : <Navigate to='/' />
-} */
+}
 
 const router = createBrowserRouter(
 	createRoutesFromElements(

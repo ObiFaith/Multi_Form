@@ -33,7 +33,7 @@ const Sidebar = ({isOpen, setOpen}) => {
 				</div>
 			</div>
 			{isOpen ? (
-				<div className="flex gap-4 items-center justify-between w-full">
+				<div className="flex gap-4 items-center justify-between w-full mt-16">
 					<div className="flex gap-2">
 						<img src={avatar} alt="user icon" />
 						<div>
